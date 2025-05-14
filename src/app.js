@@ -6,8 +6,12 @@ app.use("/hello",(req, res) => {
     res.send("Hello");
 })
 
-app.use((req, res) => {
-    res.send("Dashboard");
+app.get("/user",(req, res) => {
+    res.send({firstName: "John", lastName: "Doe"});
+})
+
+app.post("/user", (req, res) => {
+    res.send("Data saved to DB");
 })
 
 app.listen(7777, () => {
